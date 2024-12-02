@@ -2,36 +2,41 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        NumberUtils numberUtils=new NumberUtils();
-        System.out.println("Enter the number to be checked as an Armstrong number");
-        System.out.println(numberUtils.isArmStrongNumber(sc.nextInt()));
-        System.out.println("Enter the range separated by spaces");
-        int startRange=sc.nextInt();
-        int endRange=sc.nextInt();
-        for(int i=startRange;i<=endRange;i++){
-            if( numberUtils.isPrimeNumber(i)){
-                System.out.print(i+" ");
-            }
-        }
-        System.out.println("Enter the number to find the sum of digits of a given number");
-        System.out.println(numberUtils.sumOfDigits(sc.nextInt()));
-        System.out.println("Enter the number of rows of Pyramid");
-        numberUtils.generatePattern(sc.nextInt());
-        System.out.println("Calculator");
-        System.out.println("Enter operation to be done and the numbers to which opeation to be done separated by spaces");
-        numberUtils.calculator(sc.next(),sc.nextInt(),sc.nextInt());
-        sc.close();
+        Scanner scanner=new Scanner(System.in);
 
+        // Input: sirius 2, Output: sius
+        System.out.println("Enter the word and the limit separated in spaces");
+        StringPattern stringPattern=new StringPattern(scanner.next(),scanner.nextInt());
+        System.out.println("String Pattern: "+stringPattern.getPattern());
+
+        //Input: 347, Output: 6
+        System.out.println("Enter the number:");
+        SingleDigitProduct singleDigitProduct=new SingleDigitProduct(scanner.nextInt());
+        System.out.println(singleDigitProduct.getResult());
+
+        //Input: 2520, Output: 72
+        System.out.println("Enter the number : ");
+        SumOfDigits sumOfDigits=new SumOfDigits(scanner.nextInt());
+        System.out.println(sumOfDigits.getResult());
+
+        //Input: a3b10c4, Output: aaabbbbbbbbbbcccc
+        System.out.println("Enter the word: ");
+        StringPatternGenerator stringPatternGenerator=new StringPatternGenerator(scanner.next());
+        System.out.println(stringPatternGenerator.getResult());
+
+        /*Input: 10
+        Output:
+        1 2 7
+        2 7 1
+        7 1 2*/
+        System.out.println("Enter the sum:");
+        MatrixPatternGenerator matrixPatternGenerator=new MatrixPatternGenerator(scanner.nextInt());
+        matrixPatternGenerator.getPatternMatrix();
     }
 }
 
-//https://onlinegdb.com/WiW7_eleD
-//
-//https://onlinegdb.com/kdeJLcpLo
-//
-//https://onlinegdb.com/6zerrdIYV
-//
-//https://onlinegdb.com/VzfnguHoC
-//
-//https://onlinegdb.com/_cIkrDzso
+//https://onlinegdb.com/NXcT44Shs
+//https://www.onlinegdb.com/gzwg9eVzw
+//https://onlinegdb.com/GD36LT_vI
+//https://onlinegdb.com/FQt3vtN-M
+//https://onlinegdb.com/kBr-xkmxw
